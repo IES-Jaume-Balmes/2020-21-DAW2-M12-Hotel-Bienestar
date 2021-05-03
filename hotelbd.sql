@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 03-05-2021 a las 16:52:49
--- Versión del servidor: 10.4.17-MariaDB
--- Versión de PHP: 8.0.1
+-- Host: localhost
+-- Generation Time: May 03, 2021 at 06:05 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,21 +18,21 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `hotelbd`
+-- Database: `hotelbd`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `clientes`
+-- Table structure for table `Clientes`
 --
 
-CREATE TABLE `clientes` (
-  `Id` int(24) NOT NULL,
-  `Nom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `Cognom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+CREATE TABLE `Clientes` (
+  `Id_Cliente` int(24) NOT NULL,
+  `Nombre` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `Apellido` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `Email` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `Telefon` int(9) NOT NULL,
+  `Telefono` int(9) NOT NULL,
   `Pais` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `Tarjeta` varchar(30) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -40,10 +40,10 @@ CREATE TABLE `clientes` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `empleados`
+-- Table structure for table `Empleados`
 --
 
-CREATE TABLE `empleados` (
+CREATE TABLE `Empleados` (
   `Id` int(24) NOT NULL,
   `Nom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `Cognom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
@@ -52,37 +52,73 @@ CREATE TABLE `empleados` (
   `Pais` varchar(30) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+-- --------------------------------------------------------
+
 --
--- Índices para tablas volcadas
+-- Table structure for table `Habitaciones`
+--
+
+CREATE TABLE `Habitaciones` (
+  `Id_Habitacion` int(24) NOT NULL,
+  `N_Habitacion` int(24) NOT NULL,
+  `Baño` tinyint(4) NOT NULL,
+  `N_Camas` int(24) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Reserva`
+--
+
+CREATE TABLE `Reserva` (
+  `Id_R_Habitacion` int(11) NOT NULL,
+  `Id_R_Cliente` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `clientes`
+-- Indexes for table `Clientes`
 --
-ALTER TABLE `clientes`
+ALTER TABLE `Clientes`
+  ADD PRIMARY KEY (`Id_Cliente`);
+
+--
+-- Indexes for table `Empleados`
+--
+ALTER TABLE `Empleados`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indices de la tabla `empleados`
+-- Indexes for table `Habitaciones`
 --
-ALTER TABLE `empleados`
-  ADD PRIMARY KEY (`Id`);
+ALTER TABLE `Habitaciones`
+  ADD PRIMARY KEY (`Id_Habitacion`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `clientes`
+-- AUTO_INCREMENT for table `Clientes`
 --
-ALTER TABLE `clientes`
+ALTER TABLE `Clientes`
+  MODIFY `Id_Cliente` int(24) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `Empleados`
+--
+ALTER TABLE `Empleados`
   MODIFY `Id` int(24) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `empleados`
+-- AUTO_INCREMENT for table `Habitaciones`
 --
-ALTER TABLE `empleados`
-  MODIFY `Id` int(24) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `Habitaciones`
+  MODIFY `Id_Habitacion` int(24) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
