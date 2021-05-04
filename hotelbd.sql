@@ -2,10 +2,10 @@
 -- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: May 03, 2021 at 06:05 PM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 8.0.3
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 04-05-2021 a las 20:02:47
+-- Versión del servidor: 10.4.18-MariaDB
+-- Versión de PHP: 7.4.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,107 +18,176 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `hotelbd`
+-- Base de datos: `hotelbd`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Clientes`
+-- Estructura de tabla para la tabla `clientes`
 --
 
-CREATE TABLE `Clientes` (
+CREATE TABLE `clientes` (
   `Id_Cliente` int(24) NOT NULL,
-  `Nombre` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `Apellido` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `Email` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `Telefono` int(9) NOT NULL,
-  `Pais` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `Tarjeta` varchar(30) COLLATE utf8_unicode_ci NOT NULL
+  `Nombre` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `Apellido` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `Apellido2` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `Email` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `Telefono` int(9) DEFAULT NULL,
+  `Pais` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Empleados`
+-- Estructura de tabla para la tabla `datos_tarjeta`
 --
 
-CREATE TABLE `Empleados` (
+CREATE TABLE `datos_tarjeta` (
+  `Id_Tarjeta` int(24) NOT NULL,
+  `Titular_Tarjeta` varchar(60) DEFAULT NULL,
+  `Tipo_Tarjeta` varchar(60) DEFAULT NULL,
+  `Num_Tarjeta` varchar(60) DEFAULT NULL,
+  `Fecha_Caducidad` varchar(60) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `empleados`
+--
+
+CREATE TABLE `empleados` (
   `Id` int(24) NOT NULL,
-  `Nom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `Cognom` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `Email` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `Telefon` int(9) NOT NULL,
-  `Pais` varchar(30) COLLATE utf8_unicode_ci NOT NULL
+  `Nom` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `Cognom` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `Email` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `Telefon` int(9) DEFAULT NULL,
+  `Pais` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Habitaciones`
+-- Estructura de tabla para la tabla `habitaciones`
 --
 
-CREATE TABLE `Habitaciones` (
+CREATE TABLE `habitaciones` (
   `Id_Habitacion` int(24) NOT NULL,
-  `N_Habitacion` int(24) NOT NULL,
-  `Baño` tinyint(4) NOT NULL,
-  `N_Camas` int(24) NOT NULL
+  `Num_Habitacion` int(24) DEFAULT NULL,
+  `Baño` tinyint(4) DEFAULT NULL,
+  `Num_Camas` int(24) DEFAULT NULL,
+  `Precio` decimal(4,2) DEFAULT NULL,
+  `Estado` varchar(60) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Reserva`
+-- Estructura de tabla para la tabla `reserva`
 --
 
-CREATE TABLE `Reserva` (
-  `Id_R_Habitacion` int(11) NOT NULL,
-  `Id_R_Cliente` int(11) NOT NULL
+CREATE TABLE `reserva` (
+  `Id_R_Habitacion` int(11) DEFAULT NULL,
+  `Id_R_Cliente` int(11) DEFAULT NULL,
+  `Id_R_Tarjeta` int(24) DEFAULT NULL,
+  `F_Llegada` date DEFAULT NULL,
+  `F_Salida` date DEFAULT NULL,
+  `Codigo_Acesso` int(5) DEFAULT NULL,
+  `num_Personas` int(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `valoraciones`
+--
+
+CREATE TABLE `valoraciones` (
+  `Id_Valoracion` int(24) NOT NULL,
+  `Rating` decimal(1,1) DEFAULT NULL,
+  `Comentario` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `valoracion_cliente_habitacion`
+--
+
+CREATE TABLE `valoracion_cliente_habitacion` (
+  `Id_V_Cliente` int(24) DEFAULT NULL,
+  `Id_V_Habitacion` int(24) DEFAULT NULL,
+  `Id_V_Valoracion` int(24) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `Clientes`
+-- Indices de la tabla `clientes`
 --
-ALTER TABLE `Clientes`
+ALTER TABLE `clientes`
   ADD PRIMARY KEY (`Id_Cliente`);
 
 --
--- Indexes for table `Empleados`
+-- Indices de la tabla `datos_tarjeta`
 --
-ALTER TABLE `Empleados`
+ALTER TABLE `datos_tarjeta`
+  ADD PRIMARY KEY (`Id_Tarjeta`);
+
+--
+-- Indices de la tabla `empleados`
+--
+ALTER TABLE `empleados`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indexes for table `Habitaciones`
+-- Indices de la tabla `habitaciones`
 --
-ALTER TABLE `Habitaciones`
+ALTER TABLE `habitaciones`
   ADD PRIMARY KEY (`Id_Habitacion`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Indices de la tabla `valoraciones`
+--
+ALTER TABLE `valoraciones`
+  ADD PRIMARY KEY (`Id_Valoracion`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `Clientes`
+-- AUTO_INCREMENT de la tabla `clientes`
 --
-ALTER TABLE `Clientes`
-  MODIFY `Id_Cliente` int(24) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `clientes`
+  MODIFY `Id_Cliente` int(24) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `Empleados`
+-- AUTO_INCREMENT de la tabla `datos_tarjeta`
 --
-ALTER TABLE `Empleados`
+ALTER TABLE `datos_tarjeta`
+  MODIFY `Id_Tarjeta` int(24) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `empleados`
+--
+ALTER TABLE `empleados`
   MODIFY `Id` int(24) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `Habitaciones`
+-- AUTO_INCREMENT de la tabla `habitaciones`
 --
-ALTER TABLE `Habitaciones`
+ALTER TABLE `habitaciones`
   MODIFY `Id_Habitacion` int(24) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `valoraciones`
+--
+ALTER TABLE `valoraciones`
+  MODIFY `Id_Valoracion` int(24) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
