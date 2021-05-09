@@ -1,0 +1,18 @@
+Notas de React:
+	1. npm i react-router-dom --save
+npm run devStart
+
+
+NPM que hay que instalar:
+	1. npm install express cors mysql2 en el server
+	2. npm install nodemon ------> npm start
+	3. npm install sequelize sequelize-cli ----> npx sequelize init (puede que el npx no lo necessites)
+	4. npx create-react-app . ----> para cliente asi se crea el react en la carpeta de dentro de la carpeta (npm start per començar)
+	5. npm install axios -----> para las sequencias api request
+	6. npm install cors ----> para el server se conecte con el react
+	7. npm install router-router-dom ---> para el client
+	8. npm install formik ---> para client formularios?
+	9. npm install yup
+	10. npm install bcrypt
+
+Extension ES7 React/Redux....
