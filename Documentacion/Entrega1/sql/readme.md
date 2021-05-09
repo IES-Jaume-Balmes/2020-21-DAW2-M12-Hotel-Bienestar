@@ -1,1 +1,1 @@
-
+Esta base de datos es provisional se tiene que canviar por la oficial la cual tiene toda la informacion que necessitamos. La idea es que en la proxima semana esta base se vuelva obsoleta y trabajemos con la base de datos principal.
