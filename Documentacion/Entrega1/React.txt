@@ -16,3 +16,6 @@ NPM que hay que instalar:
 	10. npm install bcrypt
 
 Extension ES7 React/Redux....
+
+Utilizaremos express como backend para la comunicación de nuestro frontend con la base de datos,
+sequalize como gestor de base de datos y cors para la conexión de todos ellos.
