@@ -9,3 +9,5 @@
 1. Tenemos la base de datos mas acabada.
 2. Hemos aprendido mas sobre react.
 3. Tenemos un formulario de reserva funcional.
+
+## 10/05/2021
