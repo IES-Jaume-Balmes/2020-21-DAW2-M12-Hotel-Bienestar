@@ -11,3 +11,4 @@
 3. Tenemos un formulario de reserva funcional.
 
 ## 10/05/2021
+1. Generador de paginas web staticas
