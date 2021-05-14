@@ -5,5 +5,5 @@ draft: true
 author: "Daniel, Tito, Marc"
 ---
 
-Esto es una descripción
+Este proyecto trata sobre la estructuración de una aplicacion web con react como framework principal.
 
