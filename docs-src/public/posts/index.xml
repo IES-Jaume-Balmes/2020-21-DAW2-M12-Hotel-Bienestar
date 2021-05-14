@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Hotel Bienestar</title>
+    <link>http://example.org/posts/</link>
+    <description>Recent content in Posts on Hotel Bienestar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 12 May 2021 17:20:55 +0200</lastBuildDate><atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Descripcion</title>
+      <link>http://example.org/posts/description/</link>
+      <pubDate>Wed, 12 May 2021 17:20:55 +0200</pubDate>
+      
+      <guid>http://example.org/posts/description/</guid>
+      <description>Este proyecto trata sobre la estructuración de una aplicacion web con react como framework principal.</description>
+    </item>
+    
+    <item>
+      <title>Documentacion</title>
+      <link>http://example.org/posts/documentacion/</link>
+      <pubDate>Wed, 12 May 2021 17:20:55 +0200</pubDate>
+      
+      <guid>http://example.org/posts/documentacion/</guid>
+      <description>Entrega 1: En la entrega primera entrega hemos creado una primera idea de como seria la pagina, la cual puede mostrar, insertar y buscar en una base de datos haciendo possible que un cliente pueda registrarse y un trabajador se pueda registrar y logear.
+Entrega 2:
+Entrega 3:
+Entrega 4:</description>
+    </item>
+    
+    <item>
+      <title>Frameworks</title>
+      <link>http://example.org/posts/frameworks/</link>
+      <pubDate>Wed, 12 May 2021 17:20:55 +0200</pubDate>
+      
+      <guid>http://example.org/posts/frameworks/</guid>
+      <description>Los frameworks que estamos usando son React para el frontend y express para el backend.</description>
+    </item>
+    
+  </channel>
+</rss>
