@@ -6,7 +6,6 @@ import Reserva from "./pages/Reserva";
 import Login from "./pages/Login";
 import Registration from "./pages/Registration";
 import {AuthContext} from "./helpers/AuthContext";
-
 import logo_large from "./img/logo_large.png";
 import PersonAddIcon from '@material-ui/icons/PersonAdd';
 import PersonIcon from '@material-ui/icons/Person';
