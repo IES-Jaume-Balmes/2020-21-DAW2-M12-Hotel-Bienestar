@@ -23,8 +23,7 @@ nodemon
 
 ### En caso de que no funcione el servidor o el cliente
 
-Borramos las carpetas "node-modules" y los ficheros "package.json".
-Y instalamos otra vez las dependencias con el comando:
+Borramos las carpetas "node-modules" y los ficheros "package.json", e instalamos otra vez las dependencias con el comando:
 
 ````
 npm install
