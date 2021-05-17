@@ -2,7 +2,7 @@
 
 ### Iniciar el cliente
 
-Vamos a la carpeta del cliente y ejecutamos los siguientes comandos para instalar las dependencias:
+Vamos a la carpeta del cliente y ejecutamos el siguiente comandos para instalar las dependencias:
 ````
 npm install
 ````
