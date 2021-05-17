@@ -19,7 +19,6 @@ Dicho esto creamos una base de datos con el nombre de "hotelbd2".
 Despues ejecutamos el siguiente comando para iniciar el servidor en el puerto 3001 
 ````
 nodemon
-
 ````
 
 ### En caso de que no funcione el servidor o el cliente
