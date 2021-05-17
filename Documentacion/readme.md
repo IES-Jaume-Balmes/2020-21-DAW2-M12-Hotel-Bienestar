@@ -1,1 +1,24 @@
+#Como iniciar el proyecto
 
+###Iniciar el cliente
+Vamos a la carpeta del cliente y ejecutamos los siguientes comandos para instalar las dependencias:
+````
+npm install
+````
+e inciamos el cliente 
+````
+npm start
+````
+
+###Iniciar el Servidor
+Ahora iniciaremos el servidor, pero antes tendremos que tener la base de datos lista, en nuestro caso utilizamos el xampp con phpmyadmin.
+Dicho esto  creamos una base de datos con el nombre de "hotelbd2".
+
+Despues ejecutamos el siguiente comando 
+````
+nodemon
+
+````
+
+###En caso de que no funcione el servidor o el cliente
+borramos las carpetas "node-modules" y los ficheros "package.json".
