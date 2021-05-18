@@ -1,5 +1,5 @@
-# Proyecto: Hotel-Bienestar :neckbeard:
- 1. Integrantes
+# Proyecto: Hotel-Bienestar 
+ 1. Integrantes :neckbeard:
     * Tito Aaron
     * Marc Jorge
     * Daniel Amer
