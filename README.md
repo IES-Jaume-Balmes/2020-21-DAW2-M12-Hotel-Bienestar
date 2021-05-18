@@ -1,5 +1,5 @@
 # Proyecto: Hotel-Bienestar :hotel:
- 1. Integrantes 
+ 1. Integrantes :shipit:
     * Tito Aaron
     * Marc Jorge
     * Daniel Amer
