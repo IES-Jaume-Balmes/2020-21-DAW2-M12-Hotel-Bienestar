@@ -25,6 +25,6 @@ app.use("/clientes", clientesRouter);
 
 db.sequelize.sync().then(()=>{
     app.listen(3001, () => {
-        console.log("Server goes brrrr");
+        console.log("Servidor iniciado en el puerto 3001!");
     });
 });
