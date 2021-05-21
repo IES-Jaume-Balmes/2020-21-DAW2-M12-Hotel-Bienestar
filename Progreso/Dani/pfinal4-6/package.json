@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "bootstrap": "^5.0.1",
+    "react-bootstrap": "^1.6.0",
+    "react-responsive-carousel": "^3.2.18",
+    "react-slick": "^0.28.1",
+    "react-slideshow-image": "^3.4.6",
+    "slick-carousel": "^1.8.1"
+  }
+}
