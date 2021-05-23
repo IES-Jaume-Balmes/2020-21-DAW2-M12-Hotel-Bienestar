@@ -1,0 +1,33 @@
+.container1 {
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 10%;
+    background: linear-gradient(
+        180deg,
+        rgba(238, 69, 64, 1) 0%,
+        rgba(199, 44, 65, 1) 15%,
+        rgba(128, 19, 54, 1) 30%,
+        rgba(81, 10, 50, 1) 45%,
+        rgba(45, 20, 44, 1) 100%
+    );
+}
+.card:hover {
+    box-shadow: 5px 10px 20px 1px rgba(255, 255, 255, 0.2) !important;
+    transition: all 0.7s linear;
+}
+.card-body {
+    padding: 2rem 0 !important;
+}
+.card-text {
+    padding: 0.3rem 1rem;
+    font-size: 1rem;
+}
+.card-img-top {
+    transition: all 0.2s ease-in-out;
+}
+.card-img-top:hover {
+    transform: scale(1.8);
+}
+.overflow {
+    overflow: hidden;
+}
