@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const {Clientes} = require('../models')
+const {Reserva} = require('../models')
+const {Habitaciones} = require('../models')
 
 router.get("/", async (req, res)=>{
     const ListOfClientes = await Clientes.findAll();
@@ -10,8 +12,23 @@ router.get("/", async (req, res)=>{
 router.get('/byId/:id', async (req, res)=>{
     const id = req.params.id
     const clientes = await Clientes.findByPk(id);
-    res.json(clientes);
+    const reservag = await Reserva.findByPk(clientes.ReservaId);
+    res.json(reservag);
 });
+
+router.get('/byId2/:id', async(req,  res)=>{
+    const id = req.params.id
+    const clientes = await Clientes.findByPk(id);
+    res.json(clientes);
+})
+router.get('/byId3/:id', async (req, res)=>{
+    const id = req.params.id
+    const clientes = await Clientes.findByPk(id);
+    const reservag = await Reserva.findByPk(clientes.ReservaId);
+    const habitacion = await Habitaciones.findByPk(reservag.HabitacioneId);
+    res.json(habitacion);
+});
+
 
 router.post("/", async (req,res)=>{
     const clientes = req.body;
