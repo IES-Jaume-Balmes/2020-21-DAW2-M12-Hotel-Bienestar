@@ -17,7 +17,7 @@ router.post("/", async (req,res)=>{
     const reserva = req.body;
     await Reserva.create(reserva);
     res.json(reserva);
- 
 })
+
 
 module.exports = router;

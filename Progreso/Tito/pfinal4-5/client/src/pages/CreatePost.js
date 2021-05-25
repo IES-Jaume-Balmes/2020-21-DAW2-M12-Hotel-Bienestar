@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import axios from "axios";
 import {useHistory,useParams} from "react-router-dom";
+import Cookies from 'universal-cookie';
 
 
 function CreatePost() {
@@ -10,7 +11,15 @@ function CreatePost() {
     const [children, setChildren] = useState("");
     const [checkIn, setCheckIn] = useState("");
     const [checkOut, setCheckOut] = useState("");
-
+    
+    const onSubmit= ()=>{
+        const cookies = new Cookies();
+        cookies.set("Prueba1",'asd',{path: '/'});
+        cookies.set("prueba2",'dasdasdasd',{path: '/'});
+        cookies.set("Prueba3",'sdfdsfsdf',{path: '/'});
+        window.location.href="./habitaciones";
+    }
+    /*
     const onSubmit = () =>{
         axios.post(`http://localhost:3001/reserva`,{
             HabitacioneId:id,
@@ -29,7 +38,9 @@ function CreatePost() {
                 history.push("/habitaciones");
             }
         });
+        
     };
+    */
     return (
         <div className="createPostPage">
             <div>
@@ -41,8 +52,6 @@ function CreatePost() {
                             type="date"
                             id="inputCreatePost" 
                             name="checkIn" 
-                            value={checkIn}
-                            onChange={(event)=>{setCheckIn(event.target.value)}}
                         />
                     </div>
                     <div className="formConatinerBlock">
@@ -52,8 +61,7 @@ function CreatePost() {
                             type="date"
                             id="inputCreatePost" 
                             name="checkOut" 
-                            value={checkOut}
-                            onChange={(event)=>{setCheckOut(event.target.value)}}
+
                         />
                     </div>
                     <div className="formConatinerBlock">
@@ -63,8 +71,6 @@ function CreatePost() {
                             id="inputCreatePost" 
                             name="adults" 
                             placeholder="(Ex.1-5...)"
-                            value={adults}
-                            onChange={(event)=>{setAdults(event.target.value)}}
                         />
                     </div>
                     

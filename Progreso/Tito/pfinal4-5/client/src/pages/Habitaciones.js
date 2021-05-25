@@ -1,12 +1,13 @@
 import React,{useEffect, useState, useContext} from 'react';
 import {useParams,useHistory} from "react-router-dom";
 import axios from "axios";
+import Cookies from 'universal-cookie';
 
 function Habitaciones() {
     let {id} = useParams();
     let history = useHistory();
     const [habitObject, setHabitObject] = useState({});
-
+    const cookies = new Cookies();
     useEffect(() => {
         axios.get(`http://localhost:3001/habitaciones/byId/${id}`).then((response)=>{
             setHabitObject(response.data);
@@ -16,8 +17,15 @@ function Habitaciones() {
     const onSubmit = ()=>{
         history.push(`/createusuari/${habitObject.id}`);
     };
+    
     return (
+        
+        
+        
         <div className="postPage">
+            <div>
+            {cookies.get('Prueba1¡¡')}
+            </div>
             <div className="leftSide"> 
                 <div clasName="post" id="individual">
                     <div className="title"><label>Nombre:{habitObject.nombre} </label></div>
