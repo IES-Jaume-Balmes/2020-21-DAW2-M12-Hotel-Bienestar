@@ -1,0 +1,108 @@
+import './App.css';
+import {BrowserRouter as Router, Route, Switch, Link, useHistory} from 'react-router-dom';
+import {AuthContext} from "./helpers/AuthContext";
+import {useState,useEffect} from "react";
+import axios from 'axios';
+import PersonAddIcon from '@material-ui/icons/PersonAdd';
+import PersonIcon from '@material-ui/icons/Person';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import Home from "./pages/Home";
+import CreateReserva from "./pages/CreateReserva";
+import Reserva from "./pages/Reserva";
+import Login from "./pages/Login";
+import Registration from "./pages/Registration";
+import Habitaciones from './pages/Habitaciones';
+import LoginMiReserva from './pages/LoginMiReserva';
+import MiReserva from './pages/MiReserva';
+import CreateUsuari from './pages/CreateUsuari';
+import Footer from './pages/Footer';
+import Inicio from './pages/Inicio';
+import logo from "./img/logo_white_large.png";
+import HomeEmpleados from './pages/HomeEmpleados';
+import HabitacionesEmpleados from './pages/HabitacionesEmpleados';
+import ClientesEmpleados from './pages/ClientesEmpleados';
+import Galeria from './pages/Galeria';
+import ProtectedRoute from './pages/ProtectedRoute';
+
+function App() {
+  const [isAuth, setIsAuth] = useState(false);
+  const [authState, setAuthState] = useState({username:"", id:0, status: false,});
+  useEffect(()=>{
+    axios.get('http://localhost:3001/auth',{ headers:{
+      accessToken: localStorage.getItem("accessToken"),
+    },}).then((response)=>{
+      if(response.data.error){
+        setAuthState({...authState,status:false});
+      }else{
+        setAuthState({
+          username: response.data.username,
+          id:response.data.id,
+          status:true,
+        });
+      }
+    });
+  },[]);
+
+  const logout = () =>{
+    localStorage.removeItem("accessToken");
+    setAuthState({username:"", id:0, status:false});
+    setIsAuth(false)
+  };
+
+  return (
+    <div className="App">
+      <AuthContext.Provider value={{authState, setAuthState}}>
+        <Router>
+        <nav className="navi shadow sticky-top p-3 mb-5 rounded">
+            <div className="row">
+              <div className="col col-lg-2">
+                <Link to="/"><img src={logo} alt="Inicio" className="img-fluid"/> </Link>
+              </div>
+              <div className="menu col-sm">
+                <div><Link  to="loginmireserva">Mi reserva</Link></div>
+                <div><Link to="/CreateReserva" className="neon-button"> Reserva</Link></div>
+              </div>
+              <div className="col-ls">
+                {!authState.status && (
+                  <>
+                    <Link to="/login" onClick={()=>{
+                      setIsAuth(true);
+                    }}> Login<PersonIcon/></Link>
+                    <Link to="/registration"> Register <PersonAddIcon/></Link>
+                  </>
+                )}
+                  <div className="loggedInContainer">
+                    <h2>{authState.username}</h2>
+                    
+                    {authState.status &&  <button onClick={logout}>Logout</button>}
+                  </div>
+              </div>
+            </div>
+          </nav>
+          <Switch>
+            <Route path="/" exact component={Inicio}/>
+            <Route path="/home" exact component={Home}/>
+            <Route path="/CreateReserva" exact component={CreateReserva}/>
+            <Route path="/CreateReserva/:id" exact component={CreateReserva}/>
+            <Route path="/loginmireserva" exact component={LoginMiReserva}/>
+            <Route path="/mireserva/:id" exact component={MiReserva}/>
+            <Route path="/reserva/:id" exact component={Reserva}/>
+            <Route path="/habitaciones/:id" exact component={Habitaciones}/>
+            <Route path="/registration" exact component={Registration}/>
+            <Route path="/login" exact component={Login}/>
+            <Route path="/createusuari" exact component={CreateUsuari}/>
+            <Route path="/createusuari/:id" exact component={CreateUsuari}/>
+            <Route path="/ClientesEmpleados" exact component={ClientesEmpleados}/>
+            <Route path="/HabitacionesEmpleados" exact component={HabitacionesEmpleados}/>
+          </Switch>
+          <ProtectedRoute path="/HomeEmpleados" component={HomeEmpleados} isAuth={isAuth} />
+        </Router>
+        <Footer/>
+      </AuthContext.Provider>
+
+    </div>
+  );
+}
+
+export default App;
