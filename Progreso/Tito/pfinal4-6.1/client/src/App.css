@@ -15,7 +15,7 @@
 
 body {
   margin: auto !important;
-  max-width: 1500px;
+  max-width: 1920px;
   justify-content: center;
 }
 
@@ -30,8 +30,8 @@ body {
 
 
 .card {
-  height: 400px;
-  width: 550px;
+  height: auto;
+  width: auto;
   margin:50px;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -43,7 +43,11 @@ body {
 }
 
 
-
+.cardHabitaciones{
+  height: 400px;
+  width: 550px;
+  margin: 50px;
+}
 
 
 /*postHabitaciones*/
@@ -313,19 +317,7 @@ button {
 
 /* Cards inicio */
 
-.container1 {
-  width: 80%;
-  margin-left: 10%;
-  margin-bottom: 10%;
-  background: linear-gradient(
-      180deg,
-      rgba(238, 69, 64, 1) 0%,
-      rgba(199, 44, 65, 1) 15%,
-      rgba(128, 19, 54, 1) 30%,
-      rgba(81, 10, 50, 1) 45%,
-      rgba(45, 20, 44, 1) 100%
-  );
-}
+
 .card:hover {
   box-shadow: 5px 10px 20px 1px rgba(255, 255, 255, 0.2) !important;
   transition: all 0.7s linear;
@@ -357,7 +349,8 @@ button {
   -webkit-column-width: 33%;
   -moz-column-count: 33%;
   column-width: 33%;
-  padding: 0 12px;
+  padding: 0 50px;
+  max-width: 1920px;
 }
 .gallery .pics {
   -webkit-transition: all 350ms ease;
@@ -446,8 +439,8 @@ button {
   font-size: larger;
 }
 
-.carousel-inner, .carousel, img{
-  height: 100% !important;
+ .carousel-item img{
+  height: 850px;
   width: 100% !important;
 }
 
@@ -461,3 +454,5 @@ button {
   padding: 40px;
   margin-top: 100px !important ;
 }
+
+

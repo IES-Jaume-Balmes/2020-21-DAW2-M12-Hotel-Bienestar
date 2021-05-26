@@ -21,35 +21,37 @@ function LoginMiReserva() {
     };
 
     return (
-        <div className="loginContainer">
-            <div>
+        <div className="card">
+            <div className="card-header"><h4 className="text-center m-auto">Identificate</h4></div>
+            <div className="card-body">
                 <label>Nombre:</label>
                 <input
                     name="name"
                     type="text"
-                    placeholder="Pon tu nombre"
+                    placeholder="Nombre"
+                    className="form-control"
                     onChange={(event)=>{
                         setNombre(event.target.value);
                     }}
                 />
-            </div>
-            <div>
+            
                 <label>Correo:</label>
                 <input
                     name="email"
                     type="email"
                     placeholder="Pon tu email"
+                    className="form-control"
                     onChange={(event)=>{
                         setCorreo(event.target.value);
                     }}
                 />
-            </div>       
-            <div>
+           
                 <label>Telefono:</label>
                 <input
                     name="phone"
                     type="phone"
                     placeholder="Pon tu telefono"
+                    className="form-control"
                     onChange={(event)=>{
                         setTelefono(event.target.value);
                     }}

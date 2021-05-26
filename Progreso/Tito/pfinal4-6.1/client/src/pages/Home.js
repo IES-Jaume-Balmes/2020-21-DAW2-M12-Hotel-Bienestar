@@ -25,7 +25,7 @@ function Home() {
             {listOfHabitacion.map((value)=>{
                 return (
 
-                    <div className="card" style={{ backgroundImage:`url(../img/${value.Imagen})`, backgroundSize: "100% 100%" }}onClick={()=>{
+                    <div className="cardHabitaciones card" style={{ backgroundImage:`url(../img/${value.Imagen})`, backgroundSize: "100% 100%" }}onClick={()=>{
                         history.push(`/habitaciones/${value.id}`)
                     }}>
                         <div className="card-header h-15  bg-dark text-white"><h5>{value.nombre}</h5></div>

@@ -10,28 +10,30 @@ const cards = [
         id: 1,
         title: 'PISCINA',
         img: img1,
-        desc: "Hola que tal"
+        desc: "Relajate y disfruta de las mejores piscinas climatizadas con tus seres queridos."
     },
     {
         id: 2,
         title: 'HABITACIONES',
-        img: img2
+        img: img2,
+        desc: "Descansa en nuestras habitaciones totalmente equipadas para que pases el tiempo que quieras "
     },
     {
         id: 3,
         title: 'RINCONES',
-        img: img3
+        img: img3,
+        desc: "Cada una de nuestras salas es un rincon unico para disfrutar."
     },
 ]
 const Cards = (props) => {
 
     return (
-        <div className = "container1 d-flex justify-content-center align-items-center h-100">
-            <div className = "row">
+        <div >
+            <div className = "row w-100">
                 {
                     cards.map(card =>(
-                        <div className = "col-md-4" key = {card.id}>
-                            <Card title = {card.title} img = {card.img}/>
+                        <div className = "col p-0" key = {card.id}>
+                            <Card title = {card.title} img = {card.img} desc={card.desc}/>
                         </div>
                     ))
                 }

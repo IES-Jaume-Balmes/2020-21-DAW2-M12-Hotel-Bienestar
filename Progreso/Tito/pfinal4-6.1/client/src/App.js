@@ -64,6 +64,8 @@ function App() {
     setIsAuth(false);
   };
 
+  
+
   return (
     <div className="App">
       <AuthContext.Provider value={{ authState, setAuthState }}>
