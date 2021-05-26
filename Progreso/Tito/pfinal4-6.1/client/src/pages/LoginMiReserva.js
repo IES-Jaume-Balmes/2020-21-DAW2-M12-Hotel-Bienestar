@@ -1,6 +1,7 @@
 import React,{useState, useEffect} from 'react';
 import axios from 'axios';
 import { useHistory, useParams } from 'react-router';
+import EventAvailableIcon from '@material-ui/icons/EventAvailable';
 
 function LoginMiReserva() {
     let history = useHistory();
@@ -21,7 +22,7 @@ function LoginMiReserva() {
     };
 
     return (
-        <div className="card">
+        <div className="border-dark card">
             <div className="card-header"><h4 className="text-center m-auto">Identificate</h4></div>
             <div className="card-body">
                 <label>Nombre:</label>
@@ -57,7 +58,7 @@ function LoginMiReserva() {
                     }}
                 />
             </div>
-            <button type="submit" onClick={onSubmit}>Register</button>
+            <button type="submit" className="btn w-100 bg-dark text-white" onClick={onSubmit}>Mi Reserva  <EventAvailableIcon/></button>
         </div>
     );
 };
