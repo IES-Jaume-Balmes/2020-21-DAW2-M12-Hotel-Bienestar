@@ -17,7 +17,8 @@ function CreateUsuari() {
     const [numTarjeta, setNumTarjeta] = useState("");
     const [fechaExpTarjeta, setFechaExpTarjeta] = useState("");
     const IdReserva = cookies.get('IdReserva');
-    const variable = { name: name,
+    const variable = { 
+        name: name,
         apellidos: firstname,
         dniCliente: dni,
         email: email,
@@ -36,82 +37,90 @@ function CreateUsuari() {
         });
     };
     return (
-        <div className="createPostPage">
-            <div>
-                <div className="formContainer">
-                    <div className="formConatinerBlock">
-                        <div><label>Nombre:</label></div>
-                        <input 
+        
+
+        <form class="was-validated">
+            <div className="card">
+                
+                <div className="card-header"><h4 className="text-center m-auto">Datos</h4></div>
+                <div className="card-body">
+                    <label>Nombre</label>
+                    <input 
                             autoComplete="off"
                             type="text"
                             id="inputCreatePost" 
+                            className="form-control"
                             name="name" 
-                            placeholder="(Ex. Marc)"
+                            placeholder="Nombre"
                             value={name}
                             onChange={(event)=>{setName(event.target.value)}}
+                            required
                         />
-                    </div>
-                    <div className="formConatinerBlock">
-                        <div><label>Apellido:</label></div>
-                        <input 
+                            <div class="valid-feedback">Valido.</div>
+                            <div class="invalid-feedback">No dejes este campo vacío!.</div>
+                                <lable>Apellido</lable>
+                                <input 
                             autoComplete="off"
                             type="text"
                             id="inputCreatePost" 
                             name="firstname" 
-                            placeholder="(Ex.Garcia)"
+                            className="form-control"
+                            placeholder="Primer Apellido"
                             value={firstname}
                             onChange={(event)=>{setFirstName(event.target.value)}}
+                            required
                         />
-                    </div>
-                    <div className="formConatinerBlock">
-                        <div><label>Dni:</label></div>
-                        <input 
+                    <label>DNI</label>
+
+                    <input 
                             autoComplete="off"
                             type="text"
                             id="inputCreatePost" 
                             name="dni" 
                             placeholder="(Ex.123456789R)"
+                            className="form-control " 
                             value={dni}
                             onChange={(event)=>{setDni(event.target.value)}}
+                            required
                         />
-                    </div>
-                    <div className="formConatinerBlock">
-                        <div><label>Correo:</label></div>
+                        <lable>Correo</lable>
                         <input 
                             autoComplete="off"
                             id="inputCreatePost" 
                             name="email" 
-                            placeholder="(Ex.ex@gmail.com)"
+                            placeholder="Email"
+                            className="form-control " 
                             value={email}
                             onChange={(event)=>{setEmail(event.target.value)}}
+                            required
                         />
-                    </div>
-                    
-                    <div className="formConatinerBlock">
-                        <div><label>Telefono:</label></div>
+                        <label>Telefono</label>
                         <input 
                             autoComplete="off"
                             id="inputCreatePost" 
                             name="phone" 
                             placeholder="(Ex.666 555 777)"
+                            className="form-control"
                             value={phone}
                             onChange={(event)=>{setPhone(event.target.value)}}
+                            required
                         />
+                        <lable>Pais</lable>
+                        <select value={pais} onChange={(event)=>{setPais(event.target.value)}} className="form-control" >
+                            <option value="España">España</option>
+                            <option value="Francia">Francia</option>
+                            <option value="Italia">Italia</option>
+                            <option value="Alemania">Alemania</option>
+                        </select>
                     </div>
+                
+            </div>
 
-                    <div className="formConatinerBlock">
-                        <div><label>Pais:</label></div>
-                        <input 
-                            autoComplete="off"
-                            id="inputCreatePost" 
-                            name="pais" 
-                            placeholder="(Ex.España)"
-                            value={pais}
-                            onChange={(event)=>{setPais(event.target.value)}}
-                        />
-                    </div>
+            <div>
+                <div className="formContainer">
+                    
  
-                    <br></br>
+                    
                     <div><h2>Datos de pago</h2></div>
 
                     <div className="formConatinerBlock">
@@ -153,8 +162,8 @@ function CreateUsuari() {
                     
                     <button type="submit" onClick={onSubmit}>Hacer Reserva</button>
                 </div>
-            </div>
-        </div>
+            </div>  
+        </form>
     );
 }
 

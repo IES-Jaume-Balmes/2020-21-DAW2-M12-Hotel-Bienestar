@@ -22,7 +22,7 @@ function LoginMiReserva() {
     };
 
     return (
-        <div className="border-dark card">
+        <div className="border-dark card p-5">
             <div className="card-header"><h4 className="text-center m-auto">Identificate</h4></div>
             <div className="card-body">
                 <label>Nombre:</label>

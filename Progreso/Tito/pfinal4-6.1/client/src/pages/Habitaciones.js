@@ -41,19 +41,20 @@ function Habitaciones() {
     });
   };
   return (
-
-    <div className="card w-50 border-dark">
+<>
+    <div  className=" col card w-50 p-3 border-dark">
       <div className="card-header">
         <h4 className="text-center m-auto">Resumen de la reserva</h4>
       </div>
       <div className="card-body">
         <div className="row">
-          <span className="col">
+         
+          <span className="col text-center">
           <strong>Llegada </strong>
           {cookies.get("checkIn")} <CallReceivedIcon />
           </span>
           
-          <span className="col">
+          <span className="col text-center">
            <strong>Salida </strong> 
            {cookies.get("checkOut")} <CallMadeIcon />
             <br />
@@ -64,8 +65,9 @@ function Habitaciones() {
             <h4 className="text-center m-auto">
               {habitObject.nombre} Nº {habitObject.numHabitacion}
             </h4>
+            <img className="rounded img-fluid mx-auto d-block"src ={`../img/${habitObject.Imagen}`}/>
           </div>
-          <ul class="list-group">
+          <ul class="list-group ">
             <li class="list-group-item ">
                 <AccessibilityIcon/> 
                <strong> Adultos
@@ -86,13 +88,14 @@ function Habitaciones() {
               <strong> Baño/s <span className="float-right">{habitObject.Baño}</span></strong>
             </li>
             <li class="list-group-item list-group-item-success ">
-              <span className="float-right"> Precio <strong>{habitObject.PrecioBase}€ </strong></span>
+              <span className="float-right"> Total: <strong>{habitObject.PrecioBase}€ </strong></span>
             </li>
           </ul>
         </div>
       </div>
       <button class="btn bg-dark text-white m-auto" onClick={onSubmit} > Continuar </button>
     </div>
+    </>
   );
 }
 
