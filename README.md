@@ -6,4 +6,4 @@
  2. Tutor:
     * Joan Quintana
  3. Descripción:
-    * Este proyecto trata sobre la estructuración de una aplicacion web con react como framework principal.
+    * Este proyecto trata sobre la estructuración de una aplicacion web con react como framework principal, El objetivo de la aplicación será la gestión de una página web de un hotel.
