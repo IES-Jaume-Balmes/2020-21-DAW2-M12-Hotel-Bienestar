@@ -83,7 +83,7 @@ function App() {
             <div className="collapse navbar-collapse" id="collapsibleNavbar">
               <ul className="navbar-nav">
                 <li className="nav-item">
-                <Link to="/CreateReserva" className="neon-button"> Reserva</Link>
+                <Link to="/CreateReserva" className="neon-button"> ¡Haz tu Reserva!</Link>
                 </li>
                 <li className="nav-item">
                 <Link  to="loginmireserva"  className="neon-button">Mi reserva</Link>
@@ -97,7 +97,7 @@ function App() {
                   {!authState.status && (
                   <>
                     <Link  className=" user text-white" to="/login" onClick={()=>{
-                      setIsAuth(true);}}> Login<PersonIcon/></Link>
+                      setIsAuth(true);}}> Acceso Empleado<PersonIcon/></Link>
                     <Link className="user text-white"  to="/registration"> Register <PersonAddIcon/></Link>
                   </>
                 )}

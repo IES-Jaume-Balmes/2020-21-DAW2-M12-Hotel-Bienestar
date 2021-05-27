@@ -18,10 +18,10 @@ function CreateReserva(){
     };
 
     const validationSchema = Yup.object().shape({//mirar yup int
-        adults: Yup.string().min(1).max(5).required('Debes Seleccionar el numero de adultos!'),
+        adults: Yup.string().min(1).max(5).required('Este campo de obligatorio!'),
         children: Yup.string().max(4),
-        checkIn: Yup.date().required('You must input a checkIn!'),
-        checkOut: Yup.date().required('You must input a checkOut!'),
+        checkIn: Yup.date().required('Selecciona una fecha de entrada'),
+        checkOut: Yup.date().required('Selecciona una fecha de salida'),
     });
 
 
@@ -51,7 +51,8 @@ function CreateReserva(){
                         type="date"
                         id="inputCreatePost" 
                         name="checkIn" 
-                       className="form-control"
+                       className="form-control required"
+                       
                     />
                     <ErrorMessage name="checkIn" component="span"/><br/>
                 </div>
@@ -76,7 +77,8 @@ function CreateReserva(){
                         id="inputCreatePost" 
                         name="adults" 
                         placeholder="(Ex.1-5...)"
-                        className="form-control"
+                        className="form-control required"
+                        required
                     />
                     <ErrorMessage name="adults" component="span"/><br/>
 
@@ -90,7 +92,7 @@ function CreateReserva(){
                     />
                     <ErrorMessage name="children" component="span"/><br/>
 
-                    <button type="submit" class="btn bg-dark text-white">Submit <EventAvailableIcon/></button>
+                    <button type="submit" class="btn bg-dark text-white"> Reservar <EventAvailableIcon/></button>
                     </div>
                 </Form>
                 </div>

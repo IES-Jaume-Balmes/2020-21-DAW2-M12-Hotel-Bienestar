@@ -64,7 +64,9 @@ body {
   margin-top: 20px;
 }
 
-
+form span{
+  color: red;
+}
 
 .formLogin{
   display: flex;
@@ -114,9 +116,6 @@ body {
   background-color: dodgerblue;
 }
 
-span {
-  color: red;
-}
 
 /* NAVBAR */
 
