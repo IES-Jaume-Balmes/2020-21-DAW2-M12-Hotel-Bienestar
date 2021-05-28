@@ -5,18 +5,47 @@ draft: true
 author: "Daniel, Tito, Marc"
 ---
 ## Documentacion Hotel Bienestar
-- 3/5/2021
-Primero hemos organizado la estructura del proyecto y de la base de datos.
-Despues hemos creado la base de datos con las primeras tablas y sus respectivos campos.
-Hemos empezado a hacer pruebas con el framework React, que es el que hemos escogido para nuestro proyecto.
-Hemos empezado a hacer un diagrama con la estructura de paginas por las que los usuarios se podran mover.
-- 09/05/2021
-Tenemos la base de datos mas acabada.
-Hemos aprendido mas sobre react.
-Tenemos un formulario de reserva funcional.
-- 10/05/2021
-Generador de paginas web staticas
-- 14/05/2021
-Empezar a hacer el css
-- 28/05/2021
-Agregar el css a la pagina estatica y agregar la nueva documentacion
+
+# Como iniciar el proyecto
+
+Utilizad dos terminales, el primero nos servirá para tener activo el cliente y el segundo para el servidor.
+
+### Iniciar el cliente
+
+Vamos a la carpeta del cliente y ejecutamos el siguiente comandos para instalar las dependencias:
+````
+npm install
+````
+e inciamos el cliente en el puerto 3000
+````
+npm start
+````
+
+### Iniciar el Servidor
+
+Ahora iniciaremos el servidor, pero antes tendremos que tener la base de datos lista, en nuestro caso utilizamos el xampp con phpmyadmin,
+dicho esto creamos una base de datos con el nombre de "hotelbd2".
+
+!Importante, el host es "localhost" y por defecto no tiene contraseña establecida, pero si vuestra BD la tiene, tendreis que cambiar la configuración en la carpeta de servidor/config el fichero config.json, en concreto el apartado de 'development'.
+
+instalamos las dependencias para el servidor
+````
+npm install
+````
+
+Y despues ejecutamos el siguiente comando para iniciar el servidor en el puerto 3001. 
+````
+nodemon 
+````
+o
+````
+npm start
+````
+
+### En caso de que no funcione el servidor o el cliente
+
+Borramos las carpetas "node-modules" y los ficheros "package-lock.json", e instalamos otra vez las dependencias con el comando:
+
+````
+npm install
+````

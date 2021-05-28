@@ -1,0 +1,32 @@
+const express = require('express');
+const router = express.Router();
+const {Reserva} = require('../models')
+
+router.get("/", async (req, res)=>{
+    const listOfReserva = await Reserva.findAll();
+    res.json(listOfReserva);
+});
+
+router.get('/byId/:id', async (req, res)=>{
+    const id = req.params.id
+    const reserva = await Reserva.findByPk(id);
+    res.json(reserva);
+});
+
+router.get('/byReserva/:id', async (req, res)=>{
+    const id = req.params.id
+    const reserva = await Reserva.findByPk(id);
+    res.json(reserva);
+});
+
+router.post("/", async (req,res)=>{
+    const reserva = req.body;
+    const v = await Reserva.create(reserva);
+    res.json(v);
+});
+
+router.post("/price", async(req,res)=>{
+    
+})
+
+module.exports = router;
