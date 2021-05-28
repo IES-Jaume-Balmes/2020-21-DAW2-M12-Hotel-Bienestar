@@ -16,3 +16,7 @@ Hemos aprendido mas sobre react.
 Tenemos un formulario de reserva funcional.
 - 10/05/2021
 Generador de paginas web staticas
+- 14/05/2021
+Empezar a hacer el css
+- 28/05/2021
+Agregar el css a la pagina estatica y agregar la nueva documentacion
