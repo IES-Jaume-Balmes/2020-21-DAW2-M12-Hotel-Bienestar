@@ -5,5 +5,5 @@ draft: true
 author: "Daniel, Tito, Marc"
 ---
 
-Este proyecto trata sobre la estructuración de una aplicacion web con react como framework principal.
+Este proyecto es el burdo intento de hacer una pagina web de un hotel (Hotel Bienestar) con el uso de frameworks de frontend como el react y de backend como el express y el sequelize. 
 

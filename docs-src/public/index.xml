@@ -13,7 +13,7 @@
       <pubDate>Fri, 14 May 2021 16:37:56 +0200</pubDate>
       
       <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Hotel-Bienestar/posts/description/</guid>
-      <description>Este proyecto trata sobre la estructuración de una aplicacion web con react como framework principal.</description>
+      <description>Este proyecto es el burdo intento de hacer una pagina web de un hotel (Hotel Bienestar) con el uso de frameworks de frontend como el react y de backend como el express y el sequelize.</description>
     </item>
     
     <item>
@@ -22,7 +22,10 @@
       <pubDate>Fri, 14 May 2021 16:37:56 +0200</pubDate>
       
       <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Hotel-Bienestar/posts/documentation/</guid>
-      <description>Documentacion Hotel Bienestar  3/5/2021 Primero hemos organizado la estructura del proyecto y de la base de datos. Despues hemos creado la base de datos con las primeras tablas y sus respectivos campos. Hemos empezado a hacer pruebas con el framework React, que es el que hemos escogido para nuestro proyecto. Hemos empezado a hacer un diagrama con la estructura de paginas por las que los usuarios se podran mover. 09/05/2021 Tenemos la base de datos mas acabada.</description>
+      <description>Documentacion Hotel Bienestar Como iniciar el proyecto Utilizad dos terminales, el primero nos servirá para tener activo el cliente y el segundo para el servidor.
+Iniciar el cliente Vamos a la carpeta del cliente y ejecutamos el siguiente comandos para instalar las dependencias:
+npm install e inciamos el cliente en el puerto 3000
+npm start Iniciar el Servidor Ahora iniciaremos el servidor, pero antes tendremos que tener la base de datos lista, en nuestro caso utilizamos el xampp con phpmyadmin, dicho esto creamos una base de datos con el nombre de &amp;ldquo;hotelbd2&amp;rdquo;.</description>
     </item>
     
     <item>
@@ -31,7 +34,7 @@
       <pubDate>Fri, 14 May 2021 16:37:56 +0200</pubDate>
       
       <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Hotel-Bienestar/posts/issues/</guid>
-      <description></description>
+      <description>03/05/2021 - 09/05/2021  Tito y Daniel se encargaran de el tema base de datos y php Marc se encargara del tema de empezar a aprender React Nos damos cuenta que el php con el react es complicado de usar y empezamos a usar react con una api que hicimos con express y sequelize  10/05/2021 - 16/05/2021  Ahora ya tenemos la base de datos hecha El grupo entero se pone con react y express y sequelize Se planifica como van a ser todas las paginas y Daniel se pone con la pagina principal y Marc y Tito se ponen a hacer los formularios Teniamos que hacer una plantilla para ver como quedavan las habitaciones Estabamos trabajando cada uno con cosas diferentes y necessitabamos juntarlos Necessitamos relacionar las cossas dentro del proyecto, una habitacion con una reserva y eso con un cliente Necessitamos poder llamar a una foto desde la base de datos  17/05/2021 - 23/05/2021  Daniel sigue con la pagina principal y Tito se ira rotando ayudando a Daniel en la parte del frontend y a Marc con la parte del backend Seguimos sin poder guardar la id de una habitacion con la de una reserva Estamos intentando usar las cookies para guardar esa informacion  24/05/2021 - 30/05/2021  El Daniel terminara la parte de la pagina principal, Tito se encargara de los estilos de los formularios y Marc acabara la parte de el login de los empleados Han surgido problemas con las variables y las constantes  </description>
     </item>
     
     <item>
@@ -40,8 +43,8 @@
       <pubDate>Fri, 14 May 2021 16:37:56 +0200</pubDate>
       
       <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Hotel-Bienestar/posts/milestone/</guid>
-      <description>Milestone#1: Organizar la primera semana
-Milestone#2: Milestone#3: Milestone#4: </description>
+      <description>Milestone#1: En esta primera semana tuvimos problemas con el tema del backend el qual se soluciono y empezamos a trabajar con una api que agilizaba el trabajo
+Milestone#2: En la segunda semana empezamos con los estilos para tener una primera idea de como podrian quedar y añadimos algunos nuevas ideas como un boton para ver tu reserva. No logramos llamar a la base de datos para cojer las fotos. Tampoco pudimos relacionar las habitaciones mediante su id.</description>
     </item>
     
   </channel>
