@@ -3,167 +3,176 @@ import axios from "axios";
 import {useHistory,useParams} from "react-router-dom";
 import Cookies from 'universal-cookie';
 
+import {Formik, Form, Field, ErrorMessage} from 'formik';
+import * as Yup from "yup";
+
 function CreateUsuari() {
     const cookies = new Cookies();
     let {id} = useParams();
     let history = useHistory();
-    const [name, setName] = useState("");
-    const [firstname, setFirstName] = useState("");
-    const [dni, setDni] = useState("");
-    const [email, setEmail] = useState("");
-    const [phone, setPhone] = useState("");
-    const [pais, setPais] = useState("");
-    const [titularTarjeta, setTitularTarjeta] = useState("");
-    const [numTarjeta, setNumTarjeta] = useState("");
-    const [fechaExpTarjeta, setFechaExpTarjeta] = useState("");
-    const IdReserva = cookies.get('IdReserva');
-    const variable = { 
-        name: name,
-        apellidos: firstname,
-        dniCliente: dni,
-        email: email,
-        pais: pais,
-        phone: phone,
-        titularTarjeta: titularTarjeta,
-        numTarjeta: numTarjeta,
-        fechaExpTarjeta: fechaExpTarjeta,
-        ReservaId:IdReserva,
-    }
+
+
+    const initialValues ={
+        name: "",
+        apellidos: "",
+        dniCliente: "",
+        email: "",
+       phone: "",
+       titularTarjeta: "",
+       numTarjeta: "",
+       fechaExpTarjeta: "",
+       pais:""
+    };
+
+    const validationSchema = Yup.object().shape({//mirar yup int
+        name: Yup.string().required('Selecciona una fecha de entrada'),
+        apellidos: Yup.string().required('Selecciona una fecha de entrada'),
+        dniCliente: Yup.string().required('Selecciona una fecha de entrada'),
+        email: Yup.string().required('Selecciona una fecha de entrada'),
+        phone: Yup.string().required('Selecciona una fecha de entrada'),
+        titularTarjeta: Yup.string().required('Selecciona una fecha de entrada'),
+        numTarjeta: Yup.string().required('Selecciona una fecha de entrada'),
+        fechaExpTarjeta: Yup.date().required('Selecciona una fecha de entrada'),
+        pais: Yup.string().required('Selecciona una fecha de entrada'),
+    });
     
+    
+    const onSubmit = (data) =>{
+        data.ReservaId=cookies.get('IdReserva');
+        //json.push({'ReservaId':cookies.get('IdReserva')});
+        console.log(data)
         
-    const onSubmit = () =>{
-        axios.post(`http://localhost:3001/clientes`,variable).then(()=>{
+        axios.post(`http://localhost:3001/clientes`,data).then(()=>{
             history.push("/");
         });
+        
     };
+    
+    
     return (
         
 
-        <form class="was-validated">
+        <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema} >
+            <Form className="border border-dark">
             <div className="card">
                 
                 <div className="card-header"><h4 className="text-center m-auto">Datos</h4></div>
                 <div className="card-body">
                     <label>Nombre</label>
-                    <input 
+                    <Field 
                             autoComplete="off"
                             type="text"
-                            id="inputCreatePost" 
                             className="form-control"
                             name="name" 
                             placeholder="Nombre"
-                            value={name}
-                            onChange={(event)=>{setName(event.target.value)}}
-                            required
+                          
+                           
                         />
-                            <div class="valid-feedback">Valido.</div>
-                            <div class="invalid-feedback">No dejes este campo vacío!.</div>
-                                <lable>Apellido</lable>
-                                <input 
+                        <ErrorMessage name="Nombre" component="span"/>
+                                <label>Apellido</label>
+                                <Field 
                             autoComplete="off"
                             type="text"
-                            id="inputCreatePost" 
-                            name="firstname" 
+                            
+                            name="apellidos" 
                             className="form-control"
                             placeholder="Primer Apellido"
-                            value={firstname}
-                            onChange={(event)=>{setFirstName(event.target.value)}}
-                            required
+                         
                         />
+                        <ErrorMessage name="firstname" component="span"/>
                     <label>DNI</label>
 
-                    <input 
+                    <Field 
                             autoComplete="off"
                             type="text"
-                            id="inputCreatePost" 
-                            name="dni" 
+                            
+                            name="dniCliente" 
                             placeholder="(Ex.123456789R)"
                             className="form-control " 
-                            value={dni}
-                            onChange={(event)=>{setDni(event.target.value)}}
-                            required
+             
+                            
                         />
-                        <lable>Correo</lable>
-                        <input 
+                         <ErrorMessage name="dni" component="span"/>
+                        <label>Correo</label>
+                        <Field 
                             autoComplete="off"
-                            id="inputCreatePost" 
+                             
                             name="email" 
                             placeholder="Email"
                             className="form-control " 
-                            value={email}
-                            onChange={(event)=>{setEmail(event.target.value)}}
-                            required
+           
+                            
                         />
+                         <ErrorMessage name="email" component="span"/>
                         <label>Telefono</label>
-                        <input 
+                        <Field 
                             autoComplete="off"
-                            id="inputCreatePost" 
+                            
                             name="phone" 
                             placeholder="(Ex.666 555 777)"
                             className="form-control"
-                            value={phone}
-                            onChange={(event)=>{setPhone(event.target.value)}}
-                            required
+               
+                            
                         />
-                        <lable>Pais</lable>
-                        <select value={pais} onChange={(event)=>{setPais(event.target.value)}} className="form-control" >
-                            <option value="España">España</option>
-                            <option value="Francia">Francia</option>
-                            <option value="Italia">Italia</option>
-                            <option value="Alemania">Alemania</option>
-                        </select>
-                    </div>
-                
-            </div>
-
-            <div>
-                <div className="formContainer">
-                    
- 
+                         <ErrorMessage name="phone" component="span"/>
+                        <label>Pais</label>
+                        <Field  
+                        name="pais"
+                        className="form-control"/>
+                         <ErrorMessage name="pais" component="span"/>
                     
                     <div><h2>Datos de pago</h2></div>
 
                     <div className="formConatinerBlock">
                         <div><label>Titular de la Tarjeta:</label></div>
-                        <input 
+                        <Field 
                             autoComplete="off"
-                            id="inputCreatePost" 
-                            name="titulartarjeta" 
+                            type="text"
+                            
+                            name="titularTarjeta" 
                             placeholder="(Ex.Marc Jorge)"
-                            value={titularTarjeta}
-                            onChange={(event)=>{setTitularTarjeta(event.target.value)}}
+                            className="form-control"
+                          
                         />
+                        <ErrorMessage name="titularTarjeta" component="span"/>
                     </div>
 
                     <div className="formConatinerBlock">
                         <div><label>Numero Tarjeta:</label></div>
-                        <input 
+                        <Field 
                             autoComplete="off"
-                            id="inputCreatePost" 
-                            name="numtarjeta" 
+                            type="text"
+                             
+                            name="numTarjeta" 
                             placeholder="(Ex.1234567891213)"
-                            value={numTarjeta}
-                            onChange={(event)=>{setNumTarjeta(event.target.value)}}
+                            className="form-control"
+                          
                         />
+                        <ErrorMessage name="numTarjeta" component="span"/>
                     </div>
 
                     <div className="formConatinerBlock">
                         <div><label>Fecha de cadudciad:</label></div>
-                        <input 
+                        <Field 
                             autoComplete="off"
-                            id="inputCreatePost" 
+                            
                             name="fechaExpTarjeta" 
                             placeholder="(Ex.0-5...)"
                             type="date"
-                            value={fechaExpTarjeta}
-                            onChange={(event)=>{setFechaExpTarjeta(event.target.value)}}
+                            className="form-control"
+                            
                         />
+
+                        <ErrorMessage name="fechaExpTarjeta" component="span"/>
                     </div>
                     
-                    <button type="submit" onClick={onSubmit}>Hacer Reserva</button>
+                    <button type="submit" >Hacer Reserva</button>
+               
                 </div>
-            </div>  
-        </form>
+                
+            </div> 
+            </Form> 
+        </Formik>
     );
 }
 

@@ -78,7 +78,7 @@ function CreateReserva(){
                         name="adults" 
                         placeholder="(Ex.1-5...)"
                         className="form-control required"
-                        required
+                        
                     />
                     <ErrorMessage name="adults" component="span"/><br/>
 
