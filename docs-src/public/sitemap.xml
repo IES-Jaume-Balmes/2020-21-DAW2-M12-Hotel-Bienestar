@@ -2,10 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://example.org/categories/</loc>
+    <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Hotel-Bienestar/posts/description/</loc>
+    <lastmod>2021-05-14T16:37:56+02:00</lastmod>
   </url><url>
-    <loc>http://example.org/</loc>
+    <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Hotel-Bienestar/posts/documentation/</loc>
+    <lastmod>2021-05-14T16:37:56+02:00</lastmod>
   </url><url>
-    <loc>http://example.org/tags/</loc>
+    <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Hotel-Bienestar/</loc>
+    <lastmod>2021-05-14T16:37:56+02:00</lastmod>
+  </url><url>
+    <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Hotel-Bienestar/posts/issues/</loc>
+    <lastmod>2021-05-14T16:37:56+02:00</lastmod>
+  </url><url>
+    <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Hotel-Bienestar/posts/milestone/</loc>
+    <lastmod>2021-05-14T16:37:56+02:00</lastmod>
+  </url><url>
+    <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Hotel-Bienestar/posts/</loc>
+    <lastmod>2021-05-14T16:37:56+02:00</lastmod>
+  </url><url>
+    <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Hotel-Bienestar/categories/</loc>
+  </url><url>
+    <loc>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Hotel-Bienestar/tags/</loc>
   </url>
 </urlset>

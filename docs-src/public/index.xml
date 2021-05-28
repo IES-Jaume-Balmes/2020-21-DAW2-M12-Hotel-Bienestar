@@ -2,9 +2,47 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hotel Bienestar</title>
-    <link>http://example.org/</link>
+    <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Hotel-Bienestar/</link>
     <description>Recent content on Hotel Bienestar</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Fri, 14 May 2021 16:37:56 +0200</lastBuildDate><atom:link href="https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Hotel-Bienestar/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Description</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Hotel-Bienestar/posts/description/</link>
+      <pubDate>Fri, 14 May 2021 16:37:56 +0200</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Hotel-Bienestar/posts/description/</guid>
+      <description>Este proyecto trata sobre la estructuración de una aplicacion web con react como framework principal.</description>
+    </item>
+    
+    <item>
+      <title>Documentation</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Hotel-Bienestar/posts/documentation/</link>
+      <pubDate>Fri, 14 May 2021 16:37:56 +0200</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Hotel-Bienestar/posts/documentation/</guid>
+      <description>Documentacion Hotel Bienestar  3/5/2021 Primero hemos organizado la estructura del proyecto y de la base de datos. Despues hemos creado la base de datos con las primeras tablas y sus respectivos campos. Hemos empezado a hacer pruebas con el framework React, que es el que hemos escogido para nuestro proyecto. Hemos empezado a hacer un diagrama con la estructura de paginas por las que los usuarios se podran mover. 09/05/2021 Tenemos la base de datos mas acabada.</description>
+    </item>
+    
+    <item>
+      <title>Issues</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Hotel-Bienestar/posts/issues/</link>
+      <pubDate>Fri, 14 May 2021 16:37:56 +0200</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Hotel-Bienestar/posts/issues/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Milestone</title>
+      <link>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Hotel-Bienestar/posts/milestone/</link>
+      <pubDate>Fri, 14 May 2021 16:37:56 +0200</pubDate>
+      
+      <guid>https://ies-jaume-balmes.github.io/2020-21-DAW2-M12-Hotel-Bienestar/posts/milestone/</guid>
+      <description>Milestone#1: Organizar la primera semana
+Milestone#2: Milestone#3: Milestone#4: </description>
+    </item>
+    
   </channel>
 </rss>
