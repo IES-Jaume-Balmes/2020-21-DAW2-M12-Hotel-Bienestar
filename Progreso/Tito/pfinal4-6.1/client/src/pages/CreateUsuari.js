@@ -2,16 +2,17 @@ import React,{useState} from 'react';
 import axios from "axios";
 import {useHistory,useParams} from "react-router-dom";
 import Cookies from 'universal-cookie';
-
+import {paises} from "./paises"
 import {Formik, Form, Field, ErrorMessage} from 'formik';
 import * as Yup from "yup";
+
 
 function CreateUsuari() {
     const cookies = new Cookies();
     let {id} = useParams();
     let history = useHistory();
 
-
+    console.log(paises);
     const initialValues ={
         name: "",
         apellidos: "",
@@ -24,12 +25,14 @@ function CreateUsuari() {
        pais:""
     };
 
-    const validationSchema = Yup.object().shape({//mirar yup int
-        name: Yup.string().required('Selecciona una fecha de entrada'),
-        apellidos: Yup.string().required('Selecciona una fecha de entrada'),
-        dniCliente: Yup.string().required('Selecciona una fecha de entrada'),
-        email: Yup.string().required('Selecciona una fecha de entrada'),
-        phone: Yup.string().required('Selecciona una fecha de entrada'),
+    const validationSchema = Yup.object().shape({
+        name: Yup.string().required('No dejes este campo vacio').matches(/[a-zA-Z]/,{
+            message:'Introduce un nombre válido!'}),
+        apellidos: Yup.string().required('No dejes este campo vacio'),
+        dniCliente: Yup.string().required('No dejes este campo vacio').matches(/[0-9]{8}[A-Z]/,"El formato del DNI es incorrecto"),
+        email: Yup.string().required('Selecciona una fecha de entrada').matches(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,{
+            message:'introduce una direccion de correo válida'}),
+        phone: Yup.string().required('No dejes este campo vacio').matches(/^[0-9]{9}$/,'El numero de telefono es inorrecto'),
         titularTarjeta: Yup.string().required('Selecciona una fecha de entrada'),
         numTarjeta: Yup.string().required('Selecciona una fecha de entrada'),
         fechaExpTarjeta: Yup.date().required('Selecciona una fecha de entrada'),
@@ -39,8 +42,6 @@ function CreateUsuari() {
     
     const onSubmit = (data) =>{
         data.ReservaId=cookies.get('IdReserva');
-        //json.push({'ReservaId':cookies.get('IdReserva')});
-        console.log(data)
         
         axios.post(`http://localhost:3001/clientes`,data).then(()=>{
             history.push("/");
@@ -48,6 +49,7 @@ function CreateUsuari() {
         
     };
     
+
     
     return (
         
@@ -64,11 +66,11 @@ function CreateUsuari() {
                             type="text"
                             className="form-control"
                             name="name" 
-                            placeholder="Nombre"
-                          
-                           
+                            placeholder="Nombre" 
+                                                   
                         />
-                        <ErrorMessage name="Nombre" component="span"/>
+                        {console.log(initialValues)}
+                        <ErrorMessage name="name" component="span"/>
                                 <label>Apellido</label>
                                 <Field 
                             autoComplete="off"
@@ -79,7 +81,7 @@ function CreateUsuari() {
                             placeholder="Primer Apellido"
                          
                         />
-                        <ErrorMessage name="firstname" component="span"/>
+                        <ErrorMessage name="apellidos" component="span"/>
                     <label>DNI</label>
 
                     <Field 
@@ -92,7 +94,7 @@ function CreateUsuari() {
              
                             
                         />
-                         <ErrorMessage name="dni" component="span"/>
+                         <ErrorMessage name="dniCliente" component="span"/>
                         <label>Correo</label>
                         <Field 
                             autoComplete="off"
