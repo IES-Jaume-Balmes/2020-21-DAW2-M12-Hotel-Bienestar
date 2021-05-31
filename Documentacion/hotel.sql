@@ -10,11 +10,3 @@ INSERT INTO `habitaciones` (`id`, `nombre`, `numHabitacion`, `numCamas`, `Baño`
 (8, 'Habitación Executive', 8, 2, 1, 'Exclusivas habitaciones de diseño, de aproximadamente 25 m². Además de la elegante zona de dormitorio, la mayoría de las habitaciones disponen de una pequeña zona de trabajo. Ideales para viajes de negocios, permiten combinar trabajo y placer en un entorn', 111, 'Disponible', 'habitacion8.jpg', '2021-05-15 15:41:33', '2021-05-15 15:41:33'),
 (9, 'Habitacion Nupcial', 9, 1, 1, 'Habitacion para despues de la boda, preparada con todo de talle para que los novios tengan una noche de bodas lo mas confortable possible', 100, 'Disponible', 'habitacion9.jpg', '2021-05-15 15:48:46', '2021-05-15 15:48:46');
 (10, 'Habitacion sin Baño', 10, 1, 0, 'Habitacion sin baño, con una cama y una mesita. Habitacion para una noche con luz natural', 25, 'Disponible', 'habitacion10.jpg', '2021-05-15 15:48:46', '2021-05-15 15:48:46');
-
-INSERT INTO `clientes` (`id`, `dniCliente`, `name`, `apellidos`, `email`, `pais`, `phone`, `titularTarjeta`, `numTarjeta`, `fechaExpTarjeta`, `createdAt`, `updatedAt`, `ReservaId`, `ValoracioneId`) VALUES
-(35, '123456789Q', 'Marc ', 'Jorge', 'marc@gmail.com', 'España', 123456789, 'Marc Jorge', 2147483647, '12/4', '2021-05-21 17:29:54', '2021-05-21 17:29:54', 1, NULL),
-(36, '123456789Q', 'Marc2 ', 'Jorge', 'marc@gmail.com', 'España', 123456789, 'Marc Jorge', 2147483647, '11/23', '2021-05-21 17:29:54', '2021-05-21 17:29:54', 2, NULL),
-
-INSERT INTO `reservas` (`id`, `adults`, `children`, `checkIn`, `checkOut`, `claveHabitacion`, `precioReserva`, `createdAt`, `updatedAt`, `HabitacioneId`) VALUES
-(1, 2, 3, '2021-05-21', '2021-05-22', NULL, 134, '2021-05-27 17:45:30', '2021-05-27 17:45:30', 1),
-(2, 1, 2, '2021-05-21', '2021-05-22', NULL, 134, '2021-05-27 17:45:30', '2021-05-27 17:45:30', 2),

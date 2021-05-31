@@ -1,11 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
 import { useHistory, useParams } from "react-router-dom";
 import Cookies from "universal-cookie";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { paises } from "./paises";
+
+var varpais = ""
+
+
 
 function CreateUsuari() {
+  useEffect(() => {
+    paises.forEach(pais => {
+      varpais += "<option value ='"+ pais.name+"'>"+ pais.name+"</option>";
+    });
+    document.getElementById('pais').innerHTML=varpais
+  },[]);
   const cookies = new Cookies();
   let { id } = useParams();
   let history = useHistory();
@@ -21,6 +32,8 @@ function CreateUsuari() {
     fechaExpTarjeta: "",
     pais: "",
   };
+
+ 
 
   //Validaciones con expresiones regulares
   const validationSchema = Yup.object().shape({
@@ -48,7 +61,7 @@ function CreateUsuari() {
       }),
     numTarjeta: Yup.string()
       .required("No dejes este campo vacio")
-      .matches(/^[0-9]{10}$/, "El numero de tarjeta no es correcto "),
+      .matches(/^[0-9]{10}$/, "El numero de tarjeta no es correcto (min 10 numeros) "),
     fechaExpTarjeta: Yup.string().required("No dejes este campo vacio").matches(/[0-9]{2}\/[0-9]{2}/,"El formato debe ser MM/AA"),
     pais: Yup.string().required("Selecciona un pais"),
   });
@@ -62,10 +75,15 @@ function CreateUsuari() {
   };
 
   return (
+    
+    <>
+    
     <Formik
       initialValues={initialValues}
       onSubmit={onSubmit}
       validationSchema={validationSchema}
+      
+      
     >
       <Form className="border m-5  row">
         <div className="card border-dark  p-3 col-sm">
@@ -88,6 +106,7 @@ function CreateUsuari() {
               <div className="col">
                 <label>Apellido</label>
                 <Field
+
                   autoComplete="off"
                   type="text"
                   name="apellidos"
@@ -130,7 +149,10 @@ function CreateUsuari() {
               </div>
               <div className="col">
                 <label>Pais</label>
-                <Field name="pais" className="form-control" />
+            
+                <Field as="select" id="pais" name="pais" className="form-control" >
+                  {console.log(varpais)}
+                </Field>
                 <ErrorMessage name="pais" component="span" />
               </div>
             </div>
@@ -181,14 +203,17 @@ function CreateUsuari() {
               </div>
             </div>
 
-            <button type="submit" class="btn boton bg-dark text-white">
+            <button type="submit" className="btn boton bg-dark text-white">
               Reservar
             </button>
           </div>
         </div>
       </Form>
     </Formik>
+   
+    </>
   );
+  
 }
 
 export default CreateUsuari;

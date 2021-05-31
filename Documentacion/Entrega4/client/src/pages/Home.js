@@ -47,10 +47,12 @@ function Home() {
     document.getElementById("traslado").disabled = true;
     document.getElementById("traslado").classList.remove("boton");
   };
+  
 
+      
   return (
-    <div className=" grid-container">
-        <div className="card add">
+    <div className=" hab container">
+      <div className="card add sticky-top">
         <ul class="list-group">
           <li class="list-group-item">
             Piscina
@@ -108,7 +110,7 @@ function Home() {
         return (
           <div
             id="ND"
-            className="col card"
+            className="habitacion card"
             style={{
               backgroundImage: `url(../img/${value.Imagen})`,
               backgroundSize: "100% 100%",
@@ -117,7 +119,7 @@ function Home() {
               if (value.Estado == "Disponible") {
                 history.push(`/habitaciones/${value.id}`);
               } else {
-                alert("No disponible de");
+                alert("No disponible de momento");
               }
             }}
           >
