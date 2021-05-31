@@ -48,6 +48,7 @@ function Habitaciones() {
             cookies.set('Mascota',0,{path:'/'});
             cookies.set('Traslado',0,{path:'/'});
         });
+        axios.post(`http://localhost:3001/habitaciones/${id}`);//Perque les habitaciones quedin no disponible
     };
 
     return (
