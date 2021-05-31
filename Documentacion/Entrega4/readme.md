@@ -1,1 +1,0 @@
-En la entrega 4 hemos terminado todos los estilos y añadido alguna aplicacion mas como poder añadir si se quiere piscina o no. En la carpeta sql hay un archivo llamado hotel.sql que sirve para tener habitaciones, clientes, empleados y reservas guardados desde el principio.
