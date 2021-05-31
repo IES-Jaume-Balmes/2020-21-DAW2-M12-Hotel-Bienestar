@@ -50,7 +50,7 @@ function ClientesEmpleados() {
                             <td>{value.pais}</td>
                             <td>{value.phone}</td>
                             <td>{value.email}</td> 
-                            <td><button className="btn btn-secondary " onClick={()=>{borrar(value.id)}}>Borrar Habitacion</button></td>      
+                            <td><button className="btn btn-secondary " onClick={()=>{borrar(value.id)}}>Borrar Cliente</button></td>      
                         </tr>
                     </tbody>
                 );
