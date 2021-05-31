@@ -42,8 +42,12 @@ function Habitaciones() {
         axios.post(`http://localhost:3001/reserva`, variable).then((response)=>{
             cookies.set('IdReserva',response.data.id,{path:'/'});
             history.push(`/createusuari/${habitObject.id}`);
+            cookies.set('Piscina',0,{path:'/'});
+            cookies.set('Padel',0,{path:'/'});
+            cookies.set('Almuerzo',0,{path:'/'});
+            cookies.set('Mascota',0,{path:'/'});
+            cookies.set('Traslado',0,{path:'/'});
         });
-        axios.post(`http://localhost:3001/habitaciones/${id}`);
     };
 
     return (
