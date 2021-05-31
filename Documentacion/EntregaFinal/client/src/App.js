@@ -9,7 +9,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Home from "./pages/Home";
 import CreateReserva from "./pages/CreateReserva";
-import Reserva from "./pages/Reserva";
 import Login from "./pages/Login";
 import Registration from "./pages/Registration";
 import Habitaciones from './pages/Habitaciones';
@@ -73,7 +72,7 @@ function App() {
                 <Link to="/CreateReserva" className="neon-button"> ¡Haz tu Reserva!</Link>
                 </li>
                 <li className="nav-item">
-                <Link  to="loginmireserva"  className="neon-button">Mi reserva</Link>
+                <Link  to="/loginmireserva"  className="neon-button">Mi reserva</Link>
                 </li>
         
               </ul>
@@ -99,7 +98,6 @@ function App() {
             <Route path="/CreateReserva/:id" exact component={CreateReserva}/>
             <Route path="/loginmireserva" exact component={LoginMiReserva}/>
             <Route path="/mireserva/:id" exact component={MiReserva}/>
-            <Route path="/reserva/:id" exact component={Reserva}/>
             <Route path="/habitaciones/:id" exact component={Habitaciones}/>
             <Route path="/registration" exact component={Registration}/>
             <Route path="/login" exact component={Login}/>

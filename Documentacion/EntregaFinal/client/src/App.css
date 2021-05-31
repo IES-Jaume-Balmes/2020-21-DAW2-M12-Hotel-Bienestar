@@ -482,14 +482,9 @@ button {
 .add{
   float: right;
   z-index: -1;
-  
-  
 }
 
 .habitacion{
   height: 400px;
   width: 500px;
-}
-.hab{
-  position: relative;
 }
