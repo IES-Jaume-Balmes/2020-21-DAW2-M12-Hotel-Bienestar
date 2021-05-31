@@ -11,5 +11,5 @@ En la segunda semana empezamos con los estilos para tener una primera idea de co
 ## Milestone#3:
 En la tercera semana aprendimos a usar las cookies para guardar información y asi poder relacionar las habitaciones por su id. Tambien logramos llamar a las fotos para que salieran como fondo de las habitaciones. Y para la pagina principal le pusimos un footer y un slider.
 ## Milestone#4:
-En la quarta y ultima semana acabamos los ultimos detalles de el funcionamiento de la web y dejamos listo el tema del css. En esta ultima semana se nos ocurrio añadir una idea mas para el tema de las reservas y asi que la gente pueda añadir si quieren piscina, almuerzo o padel.
+En la quarta y ultima semana acabamos los ultimos detalles de el funcionamiento de la web y dejamos listo el tema del css. En esta ultima semana se nos ocurrio añadir una idea mas para el tema de las reservas y asi que la gente pueda añadir si quieren piscina, almuerzo o padel. Tambien conseguimos arreglar el tema de las var y const.
 
