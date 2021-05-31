@@ -1,3 +1,4 @@
+use hotelbd2;
 INSERT INTO `habitaciones` (`id`, `nombre`, `numHabitacion`, `numCamas`, `Baño`, `Descripcion`, `PrecioBase`, `Estado`, `Imagen`, `createdAt`, `updatedAt`) VALUES
 (1, 'Habitación Superior', 1, 1, 1, 'Acogedoras habitaciones dobles de 20 m² para una experiencia de confort en pareja, con vistas al tranquilo jardín interior del hotel, o exteriores a la calle Mallorca.', 99, 'Disponible', 'habitacion1.jpg', '2021-05-15 15:37:58', '2021-05-15 15:37:58'),
 (2, 'Habitacion Superior 2', 2, 1, 1, 'Acogedoras habitaciones dobles de 20 m² para una experiencia de confort en pareja, con vistas al tranquilo jardín interior del hotel, o exteriores a la calle Mallorca.', 99, 'Disponible', 'habitacion2.jpg', '2021-05-15 15:48:46', '2021-05-15 15:48:46'),
@@ -9,8 +10,6 @@ INSERT INTO `habitaciones` (`id`, `nombre`, `numHabitacion`, `numCamas`, `Baño`
 (8, 'Habitación Executive', 8, 2, 1, 'Exclusivas habitaciones de diseño, de aproximadamente 25 m². Además de la elegante zona de dormitorio, la mayoría de las habitaciones disponen de una pequeña zona de trabajo. Ideales para viajes de negocios, permiten combinar trabajo y placer en un entorn', 111, 'Disponible', 'habitacion8.jpg', '2021-05-15 15:41:33', '2021-05-15 15:41:33'),
 (9, 'Habitacion Nupcial', 9, 1, 1, 'Habitacion para despues de la boda, preparada con todo de talle para que los novios tengan una noche de bodas lo mas confortable possible', 100, 'Disponible', 'habitacion9.jpg', '2021-05-15 15:48:46', '2021-05-15 15:48:46'),
 (10, 'Habitacion sin Baño', 10, 1, 0, 'Habitacion sin baño, con una cama y una mesita. Habitacion para una noche con luz natural', 25, 'Disponible', 'habitacion10.jpg', '2021-05-15 15:48:46', '2021-05-15 15:48:46');
-<<<<<<< HEAD:Documentacion/hotel.sql
-=======
 
 INSERT INTO `reservas` (`id`, `adults`, `children`, `checkIn`, `checkOut`, `claveHabitacion`, `precioReserva`, `createdAt`, `updatedAt`, `HabitacioneId`) VALUES
 (1, 2, 3, '2021-05-21', '2021-05-22', NULL, 99, '2021-05-27 17:45:30', '2021-05-27 17:45:30', 1),
@@ -29,4 +28,3 @@ INSERT INTO `empleados` (`id`, `nombre`, `contrasenya`, `createdAt`, `updatedAt`
 
 
 
->>>>>>> ac7a1afff9aa5212dd180246c2cdd1a2def0792d:Documentacion/EntregaFinal/sql/hotel.sql
