@@ -52,8 +52,7 @@ function MiReserva() {
                 <ul className="list-group">
                 <li className="list-group-item">Check In {reservaObject.checkIn}</li>
                 <li className="list-group-item">Check Out {reservaObject.checkOut}</li>
-                <li className="list-group-item">Vendran {reservaObject.adults} adultos y {reservaObject.children}
-            niños</li>
+                <li className="list-group-item">Vendran {reservaObject.adults} adultos y {reservaObject.children} niños</li>
             <li className="list-group-item">Camas {habitacionObject.numCamas}</li>
             <li className="list-group-item">Precio {habitacionObject.PrecioBase}€ </li>
                 </ul>
