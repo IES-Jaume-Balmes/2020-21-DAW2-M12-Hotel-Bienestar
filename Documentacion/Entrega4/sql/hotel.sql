@@ -26,3 +26,4 @@ INSERT INTO `empleados` (`id`, `nombre`, `contrasenya`, `createdAt`, `updatedAt`
 (6, 'Daniel', '$2b$10$fNF1nHCGDZkJZmFo4DLJF..o1D9IwHV3Z6fX7/PkXLS7yWNT6B1kC', '2021-05-31 14:05:36', '2021-05-31 14:05:36');
 
 
+
