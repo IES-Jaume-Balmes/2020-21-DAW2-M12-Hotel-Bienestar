@@ -72,7 +72,7 @@ function App() {
                 <Link to="/CreateReserva" className="neon-button"> ¡Haz tu Reserva!</Link>
                 </li>
                 <li className="nav-item">
-                <Link  to="loginmireserva"  className="neon-button">Mi reserva</Link>
+                <Link  to="/loginmireserva"  className="neon-button">Mi reserva</Link>
                 </li>
         
               </ul>
