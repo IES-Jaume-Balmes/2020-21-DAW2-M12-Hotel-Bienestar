@@ -481,9 +481,4 @@ button {
 
 .add{
   position: relative;
-  left: 0px;
-}
-.grid-container{
-
-  grid-template-columns: 100%;
 }

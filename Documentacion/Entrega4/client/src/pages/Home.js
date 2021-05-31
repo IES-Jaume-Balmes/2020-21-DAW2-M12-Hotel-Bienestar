@@ -21,26 +21,31 @@ function Home() {
     const cookies = new Cookies();
     cookies.set("Piscina", 10, { path: "/" });
     document.getElementById("piscina").disabled = true;
+    document.getElementById("piscina").classList.remove("boton");
   };
   const agregarPadel = () => {
     const cookies = new Cookies();
     cookies.set("Padel", 5, { path: "/" });
     document.getElementById("padel").disabled = true;
+    document.getElementById("padel").classList.remove("boton");
   };
   const agregarAlmuerzo = () => {
     const cookies = new Cookies();
     cookies.set("Almuerzo", 20, { path: "/" });
     document.getElementById("almuerzo").disabled = true;
+    document.getElementById("almuerzo").classList.remove("boton");
   };
   const agregarMascota = () => {
     const cookies = new Cookies();
     cookies.set("Mascota", 10, { path: "/" });
     document.getElementById("mascota").disabled = true;
+    document.getElementById("mascota").classList.remove("boton");
   };
   const agregarTraslado = () => {
     const cookies = new Cookies();
     cookies.set("Traslado", 40, { path: "/" });
     document.getElementById("traslado").disabled = true;
+    document.getElementById("traslado").classList.remove("boton");
   };
 
   return (
