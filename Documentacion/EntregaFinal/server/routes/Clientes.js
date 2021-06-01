@@ -50,7 +50,7 @@ router.delete("/:id", async (req, res)=>{
     await Clientes.destroy({where:{
         id:clienteId,
     },});
-    res.json("Cliente Destruido");
+    res.json("Cliente Eliminado");
 })
 
 module.exports = router;
