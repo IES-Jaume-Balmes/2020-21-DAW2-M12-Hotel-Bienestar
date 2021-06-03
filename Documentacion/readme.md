@@ -35,7 +35,7 @@ npm start
 ````
 
 ### Una vez iniciado todo 
-Iremos a la base de datos e importaremos el sql llamado "hotel.sql" que se encuentra en [2020-21-DAW2-M12-Hotel-Bienestar/Documentacion/EntregaFinal/sql/] 
+Iremos a la base de datos e importaremos el sql llamado "hotel.sql" que se encuentra [aqui] (2020-21-DAW2-M12-Hotel-Bienestar/Documentacion/EntregaFinal/sql/)
 
 ### En caso de que no funcione el servidor o el cliente
 
