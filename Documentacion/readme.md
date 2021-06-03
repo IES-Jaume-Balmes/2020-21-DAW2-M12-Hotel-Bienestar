@@ -1,7 +1,8 @@
 # Como iniciar el proyecto
 
-[Proyecto](https://github.com/IES-Jaume-Balmes/2020-21-DAW2-M12-Hotel-Bienestar/tree/main/Documentacion/EntregaFinal)
-Utilizad dos terminales, el primero nos servirá para tener activo el cliente y el segundo para el servidor.
+Id a esta carpeta y [Proyecto](https://github.com/IES-Jaume-Balmes/2020-21-DAW2-M12-Hotel-Bienestar/tree/main/Documentacion/EntregaFinal)
+
+y utilizad dos terminales, el primero nos servirá para tener activo el cliente y el segundo para el servidor.
 
 ### Iniciar el cliente
 
