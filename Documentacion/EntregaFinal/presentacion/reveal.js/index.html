@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Hotel Bienestar</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/league.css">
+		<link rel="stylesheet" href="./css/style.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class = "reveal">
+			<div class = "slides">
+				<section>
+					<h1>HOTEL BIENESTAR</h1>
+				</section>
+				<section>
+					<p>Proyecto realizado por:</p>
+					<li>Daniel Amer Parera</li>
+					<li>Marc Jorge Gomez</li>
+					<li>Tito Aaron Hidalgo</li>
+					<p>Tutor:</p>
+					<li>Joan Quintana</li>
+				</section>
+				<section>
+					<h2>DESCRIPCION</h2>
+					<p>Este proyecto trata sobre la estructuración de una aplicacion web con React como framework principal. 
+						El objetivo de la aplicación será la gestión de una página web de un hotel.</p>
+				</section>	
+				<section>
+					<section>
+						<h2>HERRAMIENTAS, LENGUAJES Y FRAMEWORKS UTILIZADOS</h2>
+					</section>		
+					<section id="fragmentos">
+						<h2>HERRAMIENTAS</h2>
+						<table>
+							<thead>
+								<td class="fragment">Github</td>
+								<td class="fragment">Github Pages</td>
+								<td class="fragment">Github Issues</td>
+								<td class="fragment">Github Milestones</td>
+								<td class="fragment">Static Site Generator</td>
+								<td class="fragment">Reveal.js</td>
+							</thead>
+						</table>
+					</section>
+					<section>
+						<h2>LENGUAJES</h2>
+						<table>
+							<thead>
+								<th>FRONTEND</th>
+								<th>BACKEND</th>
+							</thead>
+							<tr>
+								<td class="fragment">JAVASCRIPT</td>
+								<td class="fragment">JAVASCRIPT</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<h2>FRAMEWORKS/LIBRERIAS</h2>
+						<table>
+							<thead>
+								<th>FRONTEND</th>
+								<th>BACKEND</th>
+								<th>BACKEND</th>
+							</thead>
+							<tr>
+								<td class="fragment">REACT</td>
+								<td class="fragment">EXPRESS</td>
+								<td class="fragment">SEQUELIZE</td>
+							</tr>
+						</table>
+					</section>	
+					<section>
+						<h2>QUE ES REACT ?</h2>
+						<p>React.js es framework de JavaScript para crear interfaces de usuario. 
+						   	Permite componer interfaces de usuario complejas a partir de piezas de código pequeñas y aisladas llamadas "componentes".</p>
+					</section>
+					<section>
+						<h2>QUE ES EXPRESS ?</h2>
+						<p>Express.js es un framework para Node.js que sirve para ayudarnos a crear aplicaciones web en menos tiempo,
+							 ya que nos proporciona funcionalidades como el enrutamiento, opciones para gestionar sesiones y cookies, etc…</p>
+					</section>
+					<section>
+						<h2>QUE ES SEQUELIZE ?</h2>
+						<p>Sequelize es un ORM para Nodejs que permite agilizar los desarrollos que incluyan bases de datos relacionales como MySQL.</p>
+					</section>
+				</section>
+				<section>
+					<h2>ARQUITECTURA FINAL DEL PROYECTO</h2>
+					<p><img src = "img/arquitecturaFinal.png" alt = ""></p>
+				</section>
+				<section>
+					<h2>DISEÑOS</h2>
+					<p><img src = "img/diseñoBD.png" alt = ""></p>
+				</section>
+				<section>
+					<section>
+						<h2>FUNCIONAMIENTO</h2>
+					</section>
+					<section>
+						<h4>SERVIDOR</h4>
+						<p><img class = "express" src = "img/express.png" alt = ""></p>
+						<p><img class = "sequelize" src = "img/sequelize.png" alt = ""></p>
+					</section>
+					<section>
+						<h4>CONFIG.JSON</h4>
+							<pre><code class = "codigo" data-trim data-noescape>
+								"development": {
+									"username": "root",
+									"password": "",
+									"database": "hotelbd2",
+									"host": "localhost",
+									"dialect": "mysql"
+								  }
+							</code></pre>
+					</section>
+					<section>
+						<h4>RUTAS</h4>
+							<pre><code class = "codigo" data-trim data-noescape>
+								const express = require('express');
+								const router = express.Router();
+								const {Clientes} = require('../models')
+								const {Reserva} = require('../models')
+								const {Habitaciones} = require('../models')
+
+								router.get("/", async (req, res)=>{
+									const ListOfClientes = await Clientes.findAll();
+									res.json(ListOfClientes);
+								});
+							</code></pre>
+					</section>
+					<section>
+						<h4>MODELOS</h4>
+							<pre><code class = "codigo" data-trim data-noescape>
+								module.exports = (sequelize, DataTypes) =>{
+
+									const Clientes = sequelize.define("Clientes", {
+										dniCliente:{
+											type: DataTypes.STRING,
+											allowNull:false, 
+										},
+										name:{
+											type: DataTypes.STRING,
+											allowNull:false, 
+										},
+							</code></pre>
+					</section>
+					<section>
+						<h4>INDEX.JS</h4>
+							<pre><code class = "codigo" data-trim data-noescape>
+								const express = require('express');
+								const app = express();
+								const cors = require('cors')
+
+								app.use(express.json());
+								app.use(cors());
+
+								const clientesRouter = require('./routes/Clientes');
+								app.use("/clientes", clientesRouter);
+
+								db.sequelize.sync().then(()=>{
+									app.listen(3001, () => {
+										console.log("Server goes brrrr");
+									});
+							</code></pre>
+							<h4>CLIENTE</h4>
+							<pre><code class = "codigo" data-trim data-noescape></code>
+							axios.get('http://localhost:3001/clientes ').then((response)=>{
+								setListOfClientes(response.data)
+							  });
+							</code></pre>
+					</section>
+					
+						<section>
+							<h4>CLIENTE</h4>
+							<p><img class = "react" src = "img/react.png" alt = ""></p>
+						</section>
+						<section>
+						<h4>LOS EMPLEADOS PUEDEN ACCEDER A SU CUENTA</h4>
+							<pre><code class = "codigo" data-trim data-noescape>
+							function Login() {
+								const [nombre, setNombre] = useState("");
+								const [contrasenya, setContrasenya] = useState("");
+								const {setAuthState} = useContext(AuthContext);
+							
+								let history = useHistory();
+							
+								const login = ()=>{
+									const data = {nombre: nombre, contrasenya: contrasenya};
+									axios.post("http://localhost:3001/auth/login", data).then((response)=>{
+										if(response.data.error){
+											alert(response.data.error);
+										} else{
+											console.log(response);
+											console.log(response.data.token);
+											localStorage.setItem("accessToken", response.data.token);
+											setAuthState({nombre:response.data.nombre, id:response.data.id, status:true});
+											history.push("/HomeEmpleados");
+										}
+									});
+								};
+							</code></pre>
+						</section>
+					
+					
+					<section>
+						<h4>LOS CLIENTES PUEDEN AÑADIR EXTRAS A SU RESERVA</h4>
+						<pre><code class = "codigo" data-trim data-noescape>
+							function Home() {
+								let id = useParams();
+							  
+								const [listOfHabitacion, setListOfHabitacion] = useState([]);
+								let history = useHistory();
+							  
+								useEffect(() => {
+								  axios.get("http://localhost:3001/habitaciones").then((response) => {
+									setListOfHabitacion(response.data);
+								  });
+								}, []);
+							  
+								const agregarPiscina = () => {
+								  const cookies = new Cookies();
+								  cookies.set("Piscina", 10, { path: "/" });
+								  document.getElementById("piscina").disabled = true;
+								  document.getElementById("piscina").classList.remove("boton");
+								};
+								const agregarPadel = () => {
+								  const cookies = new Cookies();
+								  cookies.set("Padel", 5, { path: "/" });
+								  document.getElementById("padel").disabled = true;
+								  document.getElementById("padel").classList.remove("boton");
+								};
+								const agregarAlmuerzo = () => {
+								  const cookies = new Cookies();
+								  cookies.set("Almuerzo", 20, { path: "/" });
+								  document.getElementById("almuerzo").disabled = true;
+								  document.getElementById("almuerzo").classList.remove("boton");
+								};
+								const agregarMascota = () => {
+								  const cookies = new Cookies();
+								  cookies.set("Mascota", 10, { path: "/" });
+								  document.getElementById("mascota").disabled = true;
+								  document.getElementById("mascota").classList.remove("boton");
+								};
+								const agregarTraslado = () => {
+								  const cookies = new Cookies();
+								  cookies.set("Traslado", 40, { path: "/" });
+								  document.getElementById("traslado").disabled = true;
+								  document.getElementById("traslado").classList.remove("boton");
+								};
+						</code></pre>
+					</section>
+					<section>
+						<h4>LOS CLIENTES PUEDEN CONSULTAR SU RESERVA</h4>
+						<pre><code class = "codigo" data-trim data-noescape>
+							function MiReserva() {
+								let { id } = useParams();
+								const [clienteObject, setClienteObject] = useState({});
+								const [reservaObject, setReservaObject] = useState({});
+								const [habitacionObject, setHabitacionObject] = useState({});
+								let history = useHistory();
+							  
+								useEffect(() => {
+								  axios.get(`http://localhost:3001/clientes/byId/${id}`).then((response) => {
+									console.log(response);
+									setClienteObject(response.data);
+								  });
+								  axios.get(`http://localhost:3001/clientes/byId2/${id}`).then((response) => {
+									console.log(response);
+									setReservaObject(response.data);
+								  });
+							  
+								  axios.get(`http://localhost:3001/clientes/byId3/${id}`).then((response) => {
+									console.log(response);
+									console.log(response.data.Imagen);
+									setHabitacionObject(response.data);
+								  });
+								}, []);
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<h2>PROPUESTAS DE FUTURO</h2>
+					<li>SISTEMA DE VALORACIONES Y COMENTARIOS</li>
+					<li>QUE LOS EMPLEADOS TENGAN ROLES</li>
+					<li>QUE LOS EMPLEADOS PUEDAN MODIFICAR DATOS DE LOS CLIENTES</li>
+					<li>HABITACIONES EN RELACION CON LAS FECHAS</li>
+				</section>
+				<section>
+					<h2>REFLEXIONES Y CONCLUSIONES</h2>
+					<p>HA SIDO UN PROYECTO INTERESANTE DONDE HEMOS APRENDIDO A USAR FRAMEWORKS QUE NO HABIAMOS VISTO ANTES.</p>
+				</section>
+				<section>
+					<h2>DEMOSTRACION</h2>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
